@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+<nav>
+    <div id="nav-left">
+        <img id="logo" src="images/sup/logo.png" width="27px">
+        <a class="nav-a up" href="home.html">Home</a>
+        <a class="nav-a up" href="browse.html">Browser</a>
+        <a class="nav-a up" href="search.html">Search</a>
+    </div>
+    <div id="nav-right">
+        <ul id="list">
+            <span class="nav-a">My account ▼</span>
+            <li>
+                <ul>
+                    <li id="first-child"><a href="upload.html">Upload</a></li>
+                    <li id="second-child"><a href="photo.html">My photo</a></li>
+                    <li id="third-child"><a href="favorite.html">My favorite</a></li>
+                    <li id="fourth-child"><a href="log_in.html">Log in</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="con">
+    <header class="head">
+        Upload
+    </header>
+    <form class="search-form upload-form">
+        <img src="images/sup/initial.png" id="img">
+        <input type="file" name="file" id="file">
+        <p>图片标题:</p>
+        <input type="text" name="title" class="title-input">
+        <p>图片描述:</p>
+        <textarea name="description" class="des-input"></textarea>
+        <p>拍摄国家:</p>
+        <input type="text" name="country" class="title-input">
+        <p>拍摄城市:</p>
+        <input type="text" name="city" class="title-input">
+        <p></p>
+        <button type="submit" class="submit" onclick="alert('图片已上传')">Filter</button>
+    </form>
+</div>
+<footer class="root-fot">
+    Copyright© 19fdubaldcoders' first project. No right reserved.  备案号: 19302010050 ws
+</footer>
+
+<script>
+    $("#file").change(function(){
+        var objUrl = getObjectURL(this.files[0]);
+        console.log("objUrl = "+objUrl);
+        if (objUrl) {
+            $("#img").attr("src", objUrl);
+        }
+    }) ;
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL!=undefined) {
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) {
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) {
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+</script>
+</body>
+</html>

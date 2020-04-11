@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+    <div id="nav-left">
+        <img id="logo" src="images/sup/logo.png" width="27px">
+        <a class="nav-a up" href="home.html">Home</a>
+        <a id="now" name="now" class="nav-a up" href="browse.html">Browser</a>
+        <a class="nav-a up" href="search.html">Search</a>
+    </div>
+    <div id="nav-right">
+        <ul id="list">
+            <span class="nav-a">My account ▼</span>
+            <li>
+                <ul>
+                    <li id="first-child"><a href="upload.html">Upload</a></li>
+                    <li id="second-child"><a href="photo.html">My photo</a></li>
+                    <li id="third-child"><a href="favorite.html">My favorite</a></li>
+                    <li id="fourth-child"><a href="log_in.html">Log in</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="aside">
+    <div class="con aside-con">
+        <header class="head">
+            Search by Title
+        </header>
+        <input type="text" class="bro-input">
+        <button class="search-but" onclick="alert('已显示搜索结果')"><img src="images/sup/search.png"></button>
+    </div>
+    <div class="con aside-con">
+        <header class="head">
+            Hot Content
+        </header>
+        <ul class="hot">
+            <li><a class="blue-a" href="browse.html">Comic</a></li>
+            <li><a class="blue-a" href="browse.html">Scenery</a></li>
+            <li><a class="blue-a" href="browse.html">Building</a></li>
+            <li><a class="blue-a" href="browse.html">Dream</a></li>
+            <li><a class="blue-a" href="browse.html">Animal</a></li>
+        </ul>
+    </div>
+    <div class="con aside-con">
+        <header class="head">
+            Hot Country
+        </header>
+        <ul class="hot">
+            <li><a class="blue-a" href="browse.html">China</a></li>
+            <li><a class="blue-a" href="browse.html">Italy</a></li>
+            <li><a class="blue-a" href="browse.html">America</a></li>
+            <li><a class="blue-a" href="browse.html">Japan</a></li>
+        </ul>
+    </div>
+</div>
+<div class="con bro-con">
+    <header class="head">
+        Filter
+    </header>
+    <div class="select">
+        <select>
+            <option value="" selected>Filter by Content</option>
+            <option>Scenery</option>
+            <option>Comic</option>
+            <option>Building</option>
+            <option>Dream</option>
+            <option>Animal</option>
+        </select>
+        <select id="first" onChange="nextChange()">
+            <option value="" selected>Filter by Country</option>
+            <option>China</option>
+            <option>Italy</option>
+            <option>Japan</option>
+            <option>America</option>
+        </select>
+        <select id="second">
+            <option value="" selected>Filter by City</option>
+        </select>
+        <button class="submit">Filter</button>
+    </div>
+    <div class="main-con">
+        <table>
+            <tbody>
+            <tr>
+                <td><a href="details.html"><img src="images/square/square-medium/5855752464.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6592914823.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/8710247776.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6115603234.jpg"></a></td>
+            </tr>
+            <tr>
+                <td><a href="details.html"><img src="images/square/square-medium/6114859969.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/222223.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/5856697109.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/9502740177.jpg"></a></td>
+            </tr>
+            <tr>
+                <td><a href="details.html"><img src="images/square/square-medium/9498381010.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/222222.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6119130918.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/9498368556.jpg"></a></td>
+            </tr>
+            <tr>
+                <td><a href="details.html"><img src="images/square/square-medium/9494464567.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6114881215.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6114867983.jpg"></a></td>
+                <td><a href="details.html"><img src="images/square/square-medium/6114850721.jpg"></a></td>
+            </tr>
+            </tbody>
+        </table>
+        <span>
+            <a class="page" href="search.html"><<</a> &nbsp &nbsp
+            <a class="page" id="current-page" href="search.html"> 1 </a> &nbsp &nbsp
+            <a class="page" href="search.html"> 2 </a>&nbsp &nbsp
+            <a class="page" href="search.html"> 3 </a>&nbsp &nbsp
+            <a class="page" href="search.html"> 4 </a>&nbsp &nbsp
+            <a class="page" href="search.html"> 5 </a>&nbsp &nbsp
+            <a class="page" href="search.html">>></a>
+        </span>
+    </div>
+</div>
+<footer class="root-fot">
+    Copyright© 19fdubaldcoders' first project. No right reserved.  备案号: 19302010050 ws
+</footer>
+<script>
+    function nextChange()
+    {
+        var first = document.getElementById("first");
+        var second = document.getElementById("second");
+        if(first.selectedIndex == 1)
+        {
+            second.options.add(new Option("Shanghai", "1"));
+            second.options.add(new Option("Beijing", "2"));
+            second.options.add(new Option("Kunming", "3"));
+            second.options.add(new Option("Chongqing", "4"));
+        }
+
+        if(first.selectedIndex == 2)
+        {
+            second.options.add(new Option("Roma", "1"));
+            second.options.add(new Option("Milan", "2"));
+            second.options.add(new Option("Venice", "3"));
+            second.options.add(new Option("Florence", "4"));
+        }
+
+        if(first.selectedIndex == 3)
+        {
+            second.options.add(new Option("Tokyo", "1"));
+            second.options.add(new Option("Osaka", "2"));
+            second.options.add(new Option("Kamakura", "3"));
+        }
+
+        if(first.selectedIndex == 4)
+        {
+            second.options.add(new Option("New York", "1"));
+            second.options.add(new Option("San Francisco", "2"));
+            second.options.add(new Option("Washington", "3"));
+        }
+    }
+
+</script>
+</body>
+</html>
