@@ -33,9 +33,9 @@
     <header class="head">
         Upload
     </header>
-    <form class="search-form upload-form">
+    <form class="search-form upload-form" method="POST" action="photo.html">
         <img src="images/sup/initial.png" id="img">
-        <input type="file" name="file" id="file">
+        <input type="file" name="file" id="file" required>
         <p>图片标题:</p>
         <input type="text" name="title" class="title-input">
         <p>图片描述:</p>
@@ -45,7 +45,7 @@
         <p>拍摄城市:</p>
         <input type="text" name="city" class="title-input">
         <p></p>
-        <button type="submit" class="submit" onclick="alert('图片已上传')">Filter</button>
+        <button type="submit" class="submit">Submit</button>
     </form>
 </div>
 <footer class="root-fot">
